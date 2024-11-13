@@ -438,7 +438,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0.46, y: 2.54, z: -0.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -555,6 +555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55c51d0802fc16c41bbb2b6add733e63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponHolder: {fileID: 190707233}
 --- !u!114 &1283190286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -567,6 +568,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe8ef57d1bbd87f418fa35b254820ad4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponSelector: {fileID: 0}
+  numberOfWeapons: 4
 --- !u!114 &1283190287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -579,6 +582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1eeb930440c41d43964d990253eace9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 963194227}
 --- !u!114 &1283190288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -591,6 +595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f100c908e4e685c49b18d1b0ffb6e827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerSpeed: 1
 --- !u!143 &1283190289
 CharacterController:
   m_ObjectHideFlags: 0
