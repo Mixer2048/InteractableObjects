@@ -4,15 +4,51 @@ using UnityEngine;
 
 public class WeaponSelector : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Transform weaponHolder;
+
+    int selectedWeaponIndex = 0;
+
     void Start()
     {
-        
+        foreach(Transform child in weaponHolder)
+            child.gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void selectNextWeapon()
     {
-        
+        foreach (Transform child in weaponHolder)
+            child.gameObject.SetActive(false);
+
+        selectedWeaponIndex++;
+
+        if (selectedWeaponIndex > weaponHolder.childCount - 1)
+            selectedWeaponIndex = 0;
+
+        weaponHolder.GetChild(selectedWeaponIndex).gameObject.SetActive(true);
+    }
+
+    public void selectPrevWeapon()
+    {
+        foreach (Transform child in weaponHolder)
+            child.gameObject.SetActive(false);
+
+        selectedWeaponIndex--;
+
+        if (selectedWeaponIndex < 0)
+            selectedWeaponIndex = weaponHolder.childCount - 1;
+
+        weaponHolder.GetChild(selectedWeaponIndex).gameObject.SetActive(true);
+    }
+
+    public void selectWeaponByIndex(int ind)
+    {
+        foreach (Transform child in weaponHolder)
+            child.gameObject.SetActive(false);
+
+        if (ind > -1 && ind <= weaponHolder.childCount)
+        {
+            selectedWeaponIndex = ind;
+            weaponHolder.GetChild(selectedWeaponIndex).gameObject.SetActive(true);
+        }
     }
 }
