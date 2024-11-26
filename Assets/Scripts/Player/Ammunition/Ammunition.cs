@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class Ammunition : MonoBehaviour
 {
-    List<WeaponAmmo> AmmoList = new List<WeaponAmmo>();
+    public List<WeaponAmmo> AmmoList = new List<WeaponAmmo>();
     public Dictionary<WeaponTypes, int> AmmoDictionary;
 
     public UnityEvent OnAmmoChanged;
