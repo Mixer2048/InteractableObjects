@@ -19,11 +19,15 @@ public abstract class CWeapon : MonoBehaviour, IWeapon
         main.duration = 1 / fireRate;
     }
 
-    public virtual void fire()
+    public virtual void fire(Ammunition ammunition)
     {
+        if (!ammunition.GetAmmo(GetWeaponType())) return;
+
         canFire = false;
         StartCoroutine(coolDown());
     }
+
+    public abstract WeaponTypes GetWeaponType();
 
     IEnumerator coolDown()
     {
