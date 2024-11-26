@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Ammunition))]
 public class WeaponScript : MonoBehaviour
 {
     CWeapon currentWeapon;
+    Ammunition ammunition;
     bool isFiring = false;
+
+    private void Awake() => ammunition = GetComponent<Ammunition>();
 
     public void setWeapon(CWeapon selectedWeapon)
     {
@@ -34,14 +38,19 @@ public class WeaponScript : MonoBehaviour
         if (currentWeapon != null)
         {
             if (isFiring)
-                if (currentWeapon.canFire)
+                if (ammunition.CheckAmmo(currentWeapon.GetWeaponType()))
                 {
-                    if (currentWeapon.weaponEffect != null)
-                        if (currentWeapon.weaponEffect.isPlaying == false)
-                            currentWeapon.weaponEffect.Play();
+                    if (currentWeapon.canFire)
+                    {
+                        if (currentWeapon.weaponEffect != null)
+                            if (currentWeapon.weaponEffect.isPlaying == false)
+                                currentWeapon.weaponEffect.Play();
 
-                    currentWeapon.fire();
+                        currentWeapon.fire(ammunition);
+                    }
                 }
+                else if (currentWeapon.weaponEffect != null)
+                    currentWeapon.weaponEffect.Stop();
         }
     }
 }

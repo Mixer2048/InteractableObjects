@@ -12,10 +12,15 @@ public class CFlameThrower : CWeapon
         flameThrowerLogic = GetComponent<FlameThrowerLogic>();
     }
 
-    public override void fire()
+    public override void fire(Ammunition ammunition)
     {
-        base.fire();
+        base.fire(ammunition);
 
         flameThrowerLogic.shot(firePoint, damage);
+    }
+
+    public override WeaponTypes GetWeaponType()
+    {
+        return WeaponTypes.Flamer;
     }
 }
