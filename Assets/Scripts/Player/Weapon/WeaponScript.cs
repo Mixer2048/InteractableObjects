@@ -32,13 +32,16 @@ public class WeaponScript : MonoBehaviour
     void Update()
     {
         if (currentWeapon != null)
-            if (currentWeapon.canFire && isFiring)
-            {
-                if (currentWeapon.weaponEffect != null)
-                    if (currentWeapon.weaponEffect.isPlaying == false)
-                        currentWeapon.weaponEffect.Play();
+        {
+            if (isFiring)
+                if (currentWeapon.canFire)
+                {
+                    if (currentWeapon.weaponEffect != null)
+                        if (currentWeapon.weaponEffect.isPlaying == false)
+                            currentWeapon.weaponEffect.Play();
 
-                currentWeapon.fire();
-            }
+                    currentWeapon.fire();
+                }
+        }
     }
 }
