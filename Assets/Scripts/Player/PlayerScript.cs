@@ -9,12 +9,7 @@ public class PlayerScript : MonoBehaviour
 
     public int numberOfWeapons = 4;
 
-    //void Update()
-    //{
-    //    float mouseWheelDelta = Input.GetAxisRaw("Mouse ScrollWheel");
-    //    if (mouseWheelDelta > 0) weaponSelector.selectNextWeapon();
-    //    if (mouseWheelDelta < 0) weaponSelector.selectPrevWeapon();
-    //}
+    void Start() => weaponScript.setWeapon(weaponSelector.selectWeaponByIndex(0));
 
     void Update()
     {
