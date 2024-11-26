@@ -14,7 +14,7 @@ public class WeaponSelector : MonoBehaviour
             child.gameObject.SetActive(false);
     }
 
-    public void selectNextWeapon()
+    public CWeapon selectNextWeapon()
     {
         foreach (Transform child in weaponHolder)
             child.gameObject.SetActive(false);
@@ -25,9 +25,10 @@ public class WeaponSelector : MonoBehaviour
             selectedWeaponIndex = 0;
 
         weaponHolder.GetChild(selectedWeaponIndex).gameObject.SetActive(true);
+        return weaponHolder.GetChild(selectedWeaponIndex).gameObject.GetComponent<CWeapon>();
     }
 
-    public void selectPrevWeapon()
+    public CWeapon selectPrevWeapon()
     {
         foreach (Transform child in weaponHolder)
             child.gameObject.SetActive(false);
@@ -38,9 +39,15 @@ public class WeaponSelector : MonoBehaviour
             selectedWeaponIndex = weaponHolder.childCount - 1;
 
         weaponHolder.GetChild(selectedWeaponIndex).gameObject.SetActive(true);
+        return weaponHolder.GetChild(selectedWeaponIndex).gameObject.GetComponent<CWeapon>();
     }
 
-    public void selectWeaponByIndex(int ind)
+    public CWeapon getSelectedWeapon()
+    {
+        return weaponHolder.GetChild(selectedWeaponIndex).gameObject.GetComponent<CWeapon>();
+    }
+
+    public CWeapon selectWeaponByIndex(int ind)
     {
         foreach (Transform child in weaponHolder)
             child.gameObject.SetActive(false);
@@ -49,6 +56,8 @@ public class WeaponSelector : MonoBehaviour
         {
             selectedWeaponIndex = ind;
             weaponHolder.GetChild(selectedWeaponIndex).gameObject.SetActive(true);
+            return weaponHolder.GetChild(selectedWeaponIndex).gameObject.GetComponent<CWeapon>();
         }
+        return weaponHolder.GetChild(selectedWeaponIndex).gameObject.GetComponent<CWeapon>();//ѕришлось добавить, чтобы всЄ возвращало значение, так как методь перестал быть void
     }
 }

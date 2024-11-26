@@ -8,7 +8,7 @@ public class ShotgunLogic : MonoBehaviour
     [SerializeField] int buckshot = 8;
     [SerializeField] float spread = 40.0f;
 
-    public void shot(Transform firePoint, float damage)
+    public List<Vector3> shot(Transform firePoint, float damage)
     {
         List<Vector3> directions = new List<Vector3>();
 
@@ -30,5 +30,6 @@ public class ShotgunLogic : MonoBehaviour
 
             }
         }
+        return directions;
     }
 }
