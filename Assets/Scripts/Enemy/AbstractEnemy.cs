@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -16,6 +15,7 @@ public abstract class AbstractEnemy : MonoBehaviour, IEnemy
 
     NavMeshAgent agent;
     Animator animator;
+    protected StateMachine stateMachine;
 
     protected bool stunned = false;
     protected bool dead = false;
@@ -32,6 +32,8 @@ public abstract class AbstractEnemy : MonoBehaviour, IEnemy
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+
+        stateMachine = new StateMachine();
 
         StartCoroutine(updateCall());
     }
