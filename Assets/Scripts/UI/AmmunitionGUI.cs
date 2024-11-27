@@ -24,7 +24,7 @@ public class AmmunitionGUI : MonoBehaviour
                 WeaponsDictionary[pair.Key].text = pair.Value.ToString();
     }
 
-    private void Start() => ListToDicitionary();
+    private void Awake() => ListToDicitionary();
 
     private void ListToDicitionary()
     {
