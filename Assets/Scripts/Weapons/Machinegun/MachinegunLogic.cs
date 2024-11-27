@@ -1,18 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MachinegunLogic : MonoBehaviour
 {
     [SerializeField] LayerMask enemy;
+    [SerializeField, Range(1, 20)] private int piercingPower = 3;
 
     public void shot(Transform firePoint, float damage)
     {
-        RaycastHit hit;
+        RaycastHit[] hits;
 
-        if (Physics.Raycast(firePoint.position, firePoint.forward, out hit, 1000f, enemy))
+        Ray ray = new Ray(firePoint.position, firePoint.forward);
+        hits = Physics.RaycastAll(ray, 100f, enemy);
+
+        System.Array.Sort(hits, (x, y) => x.distance.CompareTo(y.distance));
+
+        if (hits.Length > 0)
         {
+            for (int i = 0; i < Mathf.Min(piercingPower, hits.Length); i++)
+            {
+                Health enemyHP = hits[i].transform.GetComponent<Health>();
 
+                if (enemyHP != null)
+                    enemyHP.hpDecrease(damage);
+            }
         }
     }
 }
