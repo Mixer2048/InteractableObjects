@@ -612,11 +612,6 @@ Transform:
   - {fileID: 976914223}
   m_Father: {fileID: 381878200}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &200316200 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5538915228175004359, guid: 9fe72eab72b1b0746b749440128b4e62, type: 3}
-  m_PrefabInstance: {fileID: 976914222}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &249374422
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1363,69 +1358,13 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 613806419157416980, guid: 9fe72eab72b1b0746b749440128b4e62, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1881647770}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5538915228175004359, guid: 9fe72eab72b1b0746b749440128b4e62, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 976914227}
-    - targetCorrespondingSourceObject: {fileID: 5538915228175004359, guid: 9fe72eab72b1b0746b749440128b4e62, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 976914226}
-    - targetCorrespondingSourceObject: {fileID: 5538915228175004359, guid: 9fe72eab72b1b0746b749440128b4e62, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 976914230}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fe72eab72b1b0746b749440128b4e62, type: 3}
 --- !u!4 &976914223 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 613806419157416980, guid: 9fe72eab72b1b0746b749440128b4e62, type: 3}
   m_PrefabInstance: {fileID: 976914222}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &976914226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 200316200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7de2bb090ef17f144bc32fef5d6ddd4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePoint: {fileID: 1881647770}
-  fireRate: 2
-  damage: 20
-  canFire: 1
-  weaponEffect: {fileID: 1761990957}
---- !u!114 &976914227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 200316200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dace685b41ea4cb45999b4d860f1bc6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemy:
-    serializedVersion: 2
-    m_Bits: 0
---- !u!114 &976914230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 200316200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d81885f4272272f47bfe724b11cdc362, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tracerPrefab: {fileID: 5969707856779768027, guid: f74d6a8c34503264e8ecf57f0cace536, type: 3}
-  poolSize: 5
-  maxPoolSize: 10
 --- !u!1 &1044872317 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1426166598410948685, guid: d751b53fd72dee34686df5a5dadd6322, type: 3}
@@ -1737,20 +1676,17 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1426166598410948685, guid: d751b53fd72dee34686df5a5dadd6322, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1623296329}
+      addedObject: {fileID: 1623296336}
     - targetCorrespondingSourceObject: {fileID: 1426166598410948685, guid: d751b53fd72dee34686df5a5dadd6322, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1623296328}
-    - targetCorrespondingSourceObject: {fileID: 1426166598410948685, guid: d751b53fd72dee34686df5a5dadd6322, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1623296332}
+      addedObject: {fileID: 1623296335}
   m_SourcePrefab: {fileID: 100100000, guid: d751b53fd72dee34686df5a5dadd6322, type: 3}
 --- !u!4 &1623296325 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6346513720455992496, guid: d751b53fd72dee34686df5a5dadd6322, type: 3}
   m_PrefabInstance: {fileID: 1623296324}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1623296328
+--- !u!114 &1623296335
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1759,15 +1695,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1044872317}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7de2bb090ef17f144bc32fef5d6ddd4b, type: 3}
+  m_Script: {fileID: 11500000, guid: a30c5698bce535e49bff9ca88adf37ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 671142858}
-  fireRate: 20
-  damage: 2
+  firePoint: {fileID: 0}
+  fireRate: 0
+  damage: 0
   canFire: 1
   weaponEffect: {fileID: 1839071144}
---- !u!114 &1623296329
+--- !u!114 &1623296336
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1776,27 +1712,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1044872317}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dace685b41ea4cb45999b4d860f1bc6d, type: 3}
+  m_Script: {fileID: 11500000, guid: 353f551424c8d1945b39d42968fe2c06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemy:
     serializedVersion: 2
     m_Bits: 0
---- !u!114 &1623296332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1044872317}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d81885f4272272f47bfe724b11cdc362, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tracerPrefab: {fileID: 5969707856779768027, guid: 7a060c48990a9d24fa21f27e2430cfe4, type: 3}
-  poolSize: 5
-  maxPoolSize: 10
 --- !u!1 &1649167278
 GameObject:
   m_ObjectHideFlags: 0
@@ -2284,11 +2205,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
---- !u!198 &1761990957 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 198234346748616026, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
-  m_PrefabInstance: {fileID: 1761990956}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1761990958 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4300533007854612, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
@@ -2549,7 +2465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d81885f4272272f47bfe724b11cdc362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tracerPrefab: {fileID: 5969707856779768027, guid: ef05bc3b98e49f04a81bf31ab5d82c49, type: 3}
+  tracerPrefab: {fileID: 3049020303042271404, guid: f9c0401d408a8e949a1a8720892604e4, type: 3}
   poolSize: 5
   maxPoolSize: 10
 --- !u!1 &1910033837
@@ -2753,6 +2669,12 @@ MonoBehaviour:
   Weapons:
   - WeaponType: 0
     AmmoText: {fileID: 1669167742}
+  - WeaponType: 1
+    AmmoText: {fileID: 2141562175}
+  - WeaponType: 2
+    AmmoText: {fileID: 1748468054}
+  - WeaponType: 3
+    AmmoText: {fileID: 1649167280}
 --- !u!1 &2141562173
 GameObject:
   m_ObjectHideFlags: 0
