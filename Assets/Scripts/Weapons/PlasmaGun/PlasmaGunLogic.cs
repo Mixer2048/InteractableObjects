@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class FlameThrowerLogic : MonoBehaviour
+public class PlasmaGunLogic : MonoBehaviour
 {
     [SerializeField] LayerMask enemy;
 
