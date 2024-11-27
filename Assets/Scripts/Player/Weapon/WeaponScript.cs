@@ -15,7 +15,6 @@ public class WeaponScript : MonoBehaviour
     {
         fireEnd();
         currentWeapon = selectedWeapon;
-        Debug.Log(currentWeapon);
     }
 
     public void fireStart()

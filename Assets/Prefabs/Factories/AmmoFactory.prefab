@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8546444937043532860
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5883818297742184671}
+  - component: {fileID: 5295070210263773410}
+  m_Layer: 0
+  m_Name: AmmoFactory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5883818297742184671
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8546444937043532860}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.23115396, y: -0.071870804, z: 3.840743}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5295070210263773410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8546444937043532860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf3da063ebe5af04991d0154a49c2808, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammoBoxes:
+  - {fileID: 2579577727784206131, guid: 652e24fa7cfec274da99d13ceb87e07f, type: 3}
+  - {fileID: 6189980925122594317, guid: 5c76e4a8c0dc5da489170c66ad1163d4, type: 3}
+  - {fileID: 4368117922332118610, guid: 013e98f42c4c53349941601958b6cdf0, type: 3}
+  - {fileID: 6954554433172095128, guid: ca69ef3203ea74d40850366cba3298a5, type: 3}
