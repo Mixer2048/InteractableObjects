@@ -22,7 +22,7 @@ public class MeleeEnemy : AbstractEnemy
         stateMachine.StartState(_runState);
     }
 
-    public void UpdateState()
+    public override void updateState()
     {
         if (dead) return;
 
