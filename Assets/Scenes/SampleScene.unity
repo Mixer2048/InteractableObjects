@@ -1727,13 +1727,59 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 613806419157416980, guid: 9fe72eab72b1b0746b749440128b4e62, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1881647770}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5538915228175004359, guid: 9fe72eab72b1b0746b749440128b4e62, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 976914226}
+    - targetCorrespondingSourceObject: {fileID: 5538915228175004359, guid: 9fe72eab72b1b0746b749440128b4e62, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 976914225}
   m_SourcePrefab: {fileID: 100100000, guid: 9fe72eab72b1b0746b749440128b4e62, type: 3}
 --- !u!4 &976914223 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 613806419157416980, guid: 9fe72eab72b1b0746b749440128b4e62, type: 3}
   m_PrefabInstance: {fileID: 976914222}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &976914224 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5538915228175004359, guid: 9fe72eab72b1b0746b749440128b4e62, type: 3}
+  m_PrefabInstance: {fileID: 976914222}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &976914225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976914224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 437272c403fb122479a64f4915cc8116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 1881647770}
+  fireRate: 2
+  damage: 10
+  canFire: 1
+  weaponEffect: {fileID: 1761990957}
+--- !u!114 &976914226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976914224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a996a33472a3ecf48b0605675b1ab5e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy:
+    serializedVersion: 2
+    m_Bits: 0
+  projectile: {fileID: 7889751135307497973, guid: 1185b0d827ac5004e88cea91a161c4c0, type: 3}
+  lifeTime: 2
+  speed: 5
 --- !u!1 &1044872317 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1426166598410948685, guid: d751b53fd72dee34686df5a5dadd6322, type: 3}
@@ -2625,6 +2671,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
+--- !u!198 &1761990957 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198234346748616026, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
+  m_PrefabInstance: {fileID: 1761990956}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1761990958 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4300533007854612, guid: ad2ab49d0a2a17148bd51c93d977bdbc, type: 3}
