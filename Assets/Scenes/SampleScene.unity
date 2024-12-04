@@ -220,7 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   piercingPower: 3
 --- !u!114 &44967645
 MonoBehaviour:
@@ -1776,7 +1776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   projectile: {fileID: 7889751135307497973, guid: 1185b0d827ac5004e88cea91a161c4c0, type: 3}
   lifeTime: 2
   speed: 5
@@ -2156,9 +2156,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a30c5698bce535e49bff9ca88adf37ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePoint: {fileID: 0}
-  fireRate: 0
-  damage: 0
+  firePoint: {fileID: 671142858}
+  fireRate: 4
+  damage: 8
   canFire: 1
   weaponEffect: {fileID: 1839071144}
 --- !u!114 &1623296336
@@ -2175,7 +2175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!1 &1649167278
 GameObject:
   m_ObjectHideFlags: 0
@@ -2937,7 +2937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   buckshot: 8
   spread: 40
 --- !u!114 &1888945755
