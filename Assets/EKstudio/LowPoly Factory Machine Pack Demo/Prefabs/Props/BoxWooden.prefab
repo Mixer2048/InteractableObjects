@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 577681563175221257}
   - component: {fileID: 3449934455195110595}
   - component: {fileID: 8328065127119898908}
+  - component: {fileID: 657290425854942413}
   m_Layer: 7
   m_Name: BoxWooden
   m_TagString: Untagged
@@ -105,3 +106,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.2646601, y: 1.2646601, z: 1.2646604}
   m_Center: {x: 0, y: 0.63112104, z: 0.00000008940697}
+--- !u!208 &657290425854942413
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3810148002973527318}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.632, y: 0.632, z: 0.632}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.63100004, z: 0}
+  m_TimeToStationary: 0.5

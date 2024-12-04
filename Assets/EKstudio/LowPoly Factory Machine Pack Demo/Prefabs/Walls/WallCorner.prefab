@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8087938038512577011}
   - component: {fileID: 6330609182738849081}
   - component: {fileID: 6373452735620299041}
+  - component: {fileID: 1513425366866329769}
   m_Layer: 7
   m_Name: WallCorner
   m_TagString: Untagged
@@ -106,3 +107,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7565609724367211428, guid: ff9a0d8b927211842b710b2c3fbdf4f8, type: 3}
+--- !u!208 &1513425366866329769
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5537787012508433644}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.349, y: 1.1650001, z: 0.34800002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 1.1650001, z: 0}
+  m_TimeToStationary: 0.5

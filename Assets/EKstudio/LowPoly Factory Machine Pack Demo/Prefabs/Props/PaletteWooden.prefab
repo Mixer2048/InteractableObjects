@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8721721251867133943}
   - component: {fileID: 6840176242471531325}
   - component: {fileID: 1849916626141707792}
+  - component: {fileID: 372083119741557119}
   m_Layer: 0
   m_Name: PaletteWooden
   m_TagString: Untagged
@@ -105,3 +106,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.9999999, y: 0.2500003, z: 1.4161463}
   m_Center: {x: -0.000000059604645, y: 0.098122194, z: 0.046621382}
+--- !u!208 &372083119741557119
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5038908395528868584}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1, y: 0.125, z: 0.708}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.098000005, z: 0.047000002}
+  m_TimeToStationary: 0.5
