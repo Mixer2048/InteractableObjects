@@ -4,5 +4,5 @@ public class PlasmaGunLogic : MonoBehaviour
 {
     [SerializeField] GameObject projectile;
 
-    public void shot(Transform firePoint) => Instantiate(projectile, firePoint.position, Quaternion.identity);
+    public void shot(Transform firePoint) => Instantiate(projectile, firePoint.position, firePoint.rotation);
 }
