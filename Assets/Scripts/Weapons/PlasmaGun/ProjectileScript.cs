@@ -28,24 +28,35 @@ public class ProjectileScript : MonoBehaviour
     //    this.damage = damage;
     //}
 
-    private void Start() => body = GetComponent<Rigidbody>();
-
-    private void Update()
+    private void Start()
     {
-        body.position += transform.forward * speed * Time.deltaTime;
-        lifeTime -= Time.deltaTime;
-        if (lifeTime <= 0)
-            Destroy(gameObject);
+        body = GetComponent<Rigidbody>();
+
+        transform.rotation *= Quaternion.Euler(-90, 0, 0);
+
+        StartCoroutine(LifeTime());
+    }
+
+    private void FixedUpdate()
+    {
+        body.position += -transform.up * speed * Time.fixedDeltaTime;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("enemy"))
+        if (collision.gameObject.layer == enemy)
         {
             Health enemyHP = collision.transform.GetComponent<Health>();
 
             if (enemyHP != null)
                 enemyHP.hpDecrease(damage);
         }
+    }
+
+    private IEnumerator LifeTime()
+    {
+        yield return new WaitForSeconds(lifeTime);
+
+        Destroy(gameObject);
     }
 }

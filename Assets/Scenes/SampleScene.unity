@@ -1774,12 +1774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a996a33472a3ecf48b0605675b1ab5e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy:
-    serializedVersion: 2
-    m_Bits: 64
-  projectile: {fileID: 7889751135307497973, guid: 1185b0d827ac5004e88cea91a161c4c0, type: 3}
-  lifeTime: 2
-  speed: 5
+  projectile: {fileID: 100002, guid: 17b2b6b0357d7264fad48e7c77828051, type: 3}
 --- !u!1 &1044872317 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1426166598410948685, guid: d751b53fd72dee34686df5a5dadd6322, type: 3}
@@ -1861,7 +1856,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1283190283}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1eeb930440c41d43964d990253eace9, type: 3}
   m_Name: 
@@ -1879,7 +1874,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f100c908e4e685c49b18d1b0ffb6e827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 1
+  playerSpeed: 6
 --- !u!143 &1283190289
 CharacterController:
   m_ObjectHideFlags: 0
@@ -3131,8 +3126,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -795, y: 445}
-  m_SizeDelta: {x: -1610, y: -910}
+  m_AnchoredPosition: {x: -795, y: 395}
+  m_SizeDelta: {x: -1610, y: -810}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2044345028
 MonoBehaviour:

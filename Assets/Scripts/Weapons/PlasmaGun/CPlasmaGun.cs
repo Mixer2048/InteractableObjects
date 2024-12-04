@@ -1,6 +1,5 @@
 using UnityEngine;
 
-//[RequireComponent(typeof(TracerSystem))]
 [RequireComponent(typeof(PlasmaGunLogic))]
 
 public class CPlasmaGun : CWeapon
@@ -10,7 +9,6 @@ public class CPlasmaGun : CWeapon
 
     private void Start()
     {
-        //tracerSystem = GetComponent<TracerSystem>();
         plasmagunLogic = GetComponent<PlasmaGunLogic>();
     }
 
@@ -18,8 +16,7 @@ public class CPlasmaGun : CWeapon
     {
         base.fire(ammunition);
 
-        //tracerSystem.createTracer(firePoint.position, firePoint.forward);
-        plasmagunLogic.shot(firePoint, damage);
+        plasmagunLogic.shot(firePoint);
     }
 
     public override WeaponTypes GetWeaponType()
