@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField, Range(1f, 20f)] public float spawnRate = 2f;
-    [SerializeField, Range(1, 20)] public int spawnRange = 5;
+    [SerializeField, Range(1, 20)] public int spawnRange = 15;
 
     [SerializeField] private List<EnemyProbability> enemyProbabilities = new List<EnemyProbability>();
     private List<EnemyFactory> _enemyFactories = new List<EnemyFactory>();
