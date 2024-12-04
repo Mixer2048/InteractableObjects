@@ -27,7 +27,10 @@ public class ShotgunLogic : MonoBehaviour
 
             if (Physics.Raycast(firePoint.position, direction, out hit, 1000f, enemy))
             {
+                Health enemyHP = hit.transform.GetComponent<Health>();
 
+                if (enemyHP != null)
+                    enemyHP.hpDecrease(damage);
             }
         }
         return directions;

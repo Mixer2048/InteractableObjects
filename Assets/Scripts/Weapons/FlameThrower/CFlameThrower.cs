@@ -16,7 +16,7 @@ public class CFlameThrower : CWeapon
     {
         base.fire(ammunition);
 
-        flameThrowerLogic.shot(firePoint, damage);
+        flameThrowerLogic.shot(firePoint, damage, weaponEffect.shape.length);
     }
 
     public override WeaponTypes GetWeaponType()
