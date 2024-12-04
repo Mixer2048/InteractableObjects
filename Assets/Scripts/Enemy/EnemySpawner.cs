@@ -1,8 +1,12 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    [SerializeField, Range(1f, 20f)] public float spawnRate = 2f;
+    [SerializeField, Range(1, 20)] public int spawnRange = 5;
+
     [SerializeField] private List<EnemyProbability> enemyProbabilities = new List<EnemyProbability>();
     private List<EnemyFactory> _enemyFactories = new List<EnemyFactory>();
 
@@ -14,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
         IEnemy enemy = _enemyFactory.GetEnemy();
 
         Vector3 direction = new Vector3(Random.insideUnitCircle.x, 0, Random.insideUnitCircle.y);
-        direction = direction.normalized * Random.Range(3, 6);
+        direction = direction.normalized * Random.Range(spawnRange, spawnRange);
         Vector3 position = transform.position + direction;
 
         enemy.positionAndRotation(position, Quaternion.identity);
@@ -22,6 +26,8 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(RegularSpawn());
+
         float probabilitySum = 0f;
 
         foreach (var item in enemyProbabilities)
@@ -39,5 +45,15 @@ public class EnemySpawner : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
             SpawnRandomEnemy();
+    }
+
+    IEnumerator RegularSpawn()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(spawnRate);
+
+            SpawnRandomEnemy();
+        }
     }
 }
