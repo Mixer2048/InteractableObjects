@@ -35,6 +35,8 @@ public abstract class AbstractEnemy : MonoBehaviour, IEnemy
 
         stateMachine = new StateMachine();
 
+        Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
         StartCoroutine(updateCall());
     }
     IEnumerator updateCall()

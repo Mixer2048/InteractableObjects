@@ -1,6 +1,6 @@
 public class StateMachine
 {
-    IState currentState = null;
+    public IState currentState = null;
 
     public void StartState(IState state)
     {

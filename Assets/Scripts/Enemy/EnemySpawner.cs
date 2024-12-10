@@ -41,11 +41,11 @@ public class EnemySpawner : MonoBehaviour
                 _enemyFactories.Add(item.factory);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Tab))
-            SpawnRandomEnemy();
-    }
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Tab))
+    //        SpawnRandomEnemy();
+    //}
 
     IEnumerator RegularSpawn()
     {
