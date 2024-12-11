@@ -51,7 +51,6 @@ public class MeleeEnemy : AbstractEnemy
         if (Vector3.Distance(transform.position, player.position) <= AttackRange)
         {
             Health playerHP = player.parent.GetComponent<Health>();
-
             if (playerHP != null)
             {
                 playerHP.hpDecrease(Damage);

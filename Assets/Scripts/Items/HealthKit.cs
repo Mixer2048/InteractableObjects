@@ -14,6 +14,7 @@ public class HealthKit : MonoBehaviour, IItem
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other);
         if (other.CompareTag("Player"))
             OnPickUp(other.gameObject);
     }
