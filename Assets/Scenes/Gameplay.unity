@@ -9468,13 +9468,45 @@ PrefabInstance:
       propertyPath: OnAmmoChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 541808700}
+    - target: {fileID: 2743905251396150684, guid: 5103e8243b8094746bf0962d7349f03c, type: 3}
+      propertyPath: damage
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2743905251396150684, guid: 5103e8243b8094746bf0962d7349f03c, type: 3}
+      propertyPath: fireRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3046422966562894760, guid: 5103e8243b8094746bf0962d7349f03c, type: 3}
+      propertyPath: fireRate
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 3090021847196818910, guid: 5103e8243b8094746bf0962d7349f03c, type: 3}
       propertyPath: OnHealthChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 137479349}
+    - target: {fileID: 5423678671768231601, guid: 5103e8243b8094746bf0962d7349f03c, type: 3}
+      propertyPath: damage
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5423678671768231601, guid: 5103e8243b8094746bf0962d7349f03c, type: 3}
+      propertyPath: fireRate
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810555532747941267, guid: 5103e8243b8094746bf0962d7349f03c, type: 3}
+      propertyPath: buckshot
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7182547643849161430, guid: 5103e8243b8094746bf0962d7349f03c, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9205719756309541547, guid: 5103e8243b8094746bf0962d7349f03c, type: 3}
+      propertyPath: damage
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 9205719756309541547, guid: 5103e8243b8094746bf0962d7349f03c, type: 3}
+      propertyPath: fireRate
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
