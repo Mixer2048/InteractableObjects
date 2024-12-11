@@ -29,7 +29,7 @@ public class MeleeEnemy : AbstractEnemy
         if (stunned) stateMachine?.SetState(_stunnedState);
         else
         {
-            if (Vector3.Angle(transform.forward, player.position - transform.position) > 20f)
+            if (Vector3.Angle(transform.forward, player.position - transform.position) > 10f)
                 stateMachine?.SetState(_rotateState);
             else if (Vector3.Distance(transform.position, player.position) > AttackRange)
                 stateMachine?.SetState(_runState);
@@ -39,21 +39,26 @@ public class MeleeEnemy : AbstractEnemy
                 stateMachine?.SetState(_attackState);
         }
 
-        Debug.Log(Vector3.Angle(transform.forward, player.position - transform.position));
-        Debug.Log(player.position + " " + transform.position);
-        Debug.Log(stateMachine.currentState);
-
         stateMachine?.Update();
+    }
+    public override void attack(bool state)
+    {
+        base.attack(state);
+
+        DealDamage();
     }
 
     public void DealDamage()
     {
         if (Vector3.Distance(transform.position, player.position) <= AttackRange)
         {
-            Health playerHP = player.GetComponent<Health>();
+            Health playerHP = player.parent.GetComponent<Health>();
 
             if (playerHP != null)
+            {
                 playerHP.hpDecrease(Damage);
+                Debug.Log(playerHP + " " + Damage);
+            }
         }
     }
 }
