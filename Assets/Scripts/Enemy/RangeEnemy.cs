@@ -1,0 +1,102 @@
+using System.Collections;
+using UnityEngine;
+
+public class RangeEnemy : AbstractEnemy
+{
+    [Range(0.1f, 100f)] public float DetectionRange = 20f;
+    [Range(1, 10)] public int Damage = 4;
+    [Range(1, 10)] public int FireRate = 10;
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private ParticleSystem shotEffect;
+    [SerializeField] private GameObject enemy;
+
+    TracerSystem tracerSystem;
+
+    Idle _idleState;
+    RotateTo _rotateState;
+    Attack _attackState;
+
+    private new void Start()
+    {
+        base.Start();
+
+        if (shotEffect != null)
+        {
+            var main = shotEffect.main;
+            main.duration = 1 / FireRate;
+        }
+
+        tracerSystem = GetComponent<TracerSystem>();
+
+        _idleState = new Idle(this);
+        _rotateState = new RotateTo(this);
+        _attackState = new Attack(this);
+
+        stateMachine.StartState(_idleState);
+    }
+
+    public override void updateState()
+    {
+        if (dead) return;
+
+        if (Vector3.Distance(transform.position, player.position) > DetectionRange)
+            stateMachine?.SetState(_idleState);
+        else if (Vector3.Angle(transform.forward, player.position - transform.position) > 0.5f)
+            stateMachine?.SetState(_rotateState);
+        else
+            stateMachine?.SetState(_attackState);
+
+        stateMachine?.Update();
+    }
+
+    public override void attack(bool state)
+    {
+        base.attack(state);
+
+        tracerSystem.createTracer(firePoint.position, firePoint.forward);
+
+        Shot();
+        StartCoroutine(CoolDown());
+    }
+
+    public override void stop(bool state)
+    {
+
+    }
+
+    public void Shot()
+    {
+        RaycastHit[] hits;
+
+        Ray ray = new Ray(firePoint.position, firePoint.forward);
+        hits = Physics.RaycastAll(ray, 100f, player.gameObject.layer);
+
+        System.Array.Sort(hits, (x, y) => x.distance.CompareTo(y.distance));
+
+        if (hits.Length > 0)
+        {
+            for (int i = 0; i < hits.Length; i++)
+            {
+                Health playerHP = player.GetComponent<Health>();
+
+                if (playerHP != null)
+                    playerHP.hpDecrease(Damage);
+            }
+        }
+    }
+
+    private IEnumerator CoolDown()
+    {
+        yield return new WaitForSeconds(1 / FireRate);
+    }
+
+    private void OnDestroy()
+    {
+        Destroy(enemy);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, DetectionRange);
+    }
+}
