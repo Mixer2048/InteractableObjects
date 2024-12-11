@@ -37,6 +37,9 @@ public abstract class AbstractEnemy : MonoBehaviour, IEnemy
 
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
+        enemyHP.onHitTaken.AddListener(stunBegin);
+        enemyHP.onDeath.AddListener(death);
+
         StartCoroutine(updateCall());
     }
     IEnumerator updateCall()

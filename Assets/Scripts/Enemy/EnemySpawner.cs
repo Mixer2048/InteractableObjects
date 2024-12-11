@@ -10,6 +10,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private List<EnemyProbability> enemyProbabilities = new List<EnemyProbability>();
     private List<EnemyFactory> _enemyFactories = new List<EnemyFactory>();
 
+    [SerializeField] private ScoreCounter _scoreCounter;
+
     EnemyFactory _enemyFactory;
 
     public void SpawnRandomEnemy()
@@ -22,6 +24,10 @@ public class EnemySpawner : MonoBehaviour
         Vector3 position = transform.position + direction;
 
         enemy.positionAndRotation(position, Quaternion.identity);
+
+        Health enemyHP = enemy.EnemyHP;
+        enemyHP.spawnOnDeath.AddListener(transform.GetComponent<ItemSpawner>().SpawnRandomItem);
+        enemyHP.onDeath.AddListener(_scoreCounter.ScoreUp);
     }
 
     private void Start()

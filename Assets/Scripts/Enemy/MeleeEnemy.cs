@@ -33,8 +33,6 @@ public class MeleeEnemy : AbstractEnemy
                 stateMachine?.SetState(_rotateState);
             else if (Vector3.Distance(transform.position, player.position) > AttackRange)
                 stateMachine?.SetState(_runState);
-            //else if (Vector3.Angle(transform.forward, player.position - transform.position) > 10f)
-            //    stateMachine?.SetState(_rotateState);
             else
                 stateMachine?.SetState(_attackState);
         }
@@ -57,7 +55,6 @@ public class MeleeEnemy : AbstractEnemy
             if (playerHP != null)
             {
                 playerHP.hpDecrease(Damage);
-                Debug.Log(playerHP + " " + Damage);
             }
         }
     }
