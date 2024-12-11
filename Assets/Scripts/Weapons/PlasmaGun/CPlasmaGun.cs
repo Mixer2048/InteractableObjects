@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CPlasmaGun : CWeapon
 {
-    private TracerSystem tracerSystem;
     private PlasmaGunLogic plasmagunLogic;
 
     private void Start()
