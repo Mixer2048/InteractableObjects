@@ -17,7 +17,7 @@ public class ItemSpawner : MonoBehaviour
         //direction = direction.normalized * Random.Range(3, 6);
         //Vector3 position = transform.position + direction;
 
-        item.SetPosition(position);
+        item.SetPosition(position + Vector3.up * 0.6f);
     }
 
     private void Start()
