@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8536721885054468517}
-  - component: {fileID: 2493171443056520696}
+  - component: {fileID: -6104814289912741150}
   m_Layer: 0
-  m_Name: EnemyFactory
+  m_Name: RangeEnemyFactory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2493171443056520696
+--- !u!114 &-6104814289912741150
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,7 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4095313572335621932}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f923649b7781a164ea4c7fecd8eb7d87, type: 3}
+  m_Script: {fileID: 11500000, guid: 2fbf394c6663e2640a3079c2547e28d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _meleeEnemy: {fileID: 5488951955355194559, guid: 80a53175b54ac85428a830a00711f0de, type: 3}
+  _rangeEnemy: {fileID: 3308325072510794909, guid: 5d52a0f8c55f637439726773ca491b97, type: 3}

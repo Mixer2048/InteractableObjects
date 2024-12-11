@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField, Range(1f, 20f)] public float spawnRate = 2f;
-    [SerializeField, Range(1, 20)] public int spawnRange = 15;
+    [SerializeField, Range(1f, 50f)] public float spawnRate = 2f;
+    [SerializeField, Range(1, 50)] public int spawnRange = 15;
 
     [SerializeField] private List<EnemyProbability> enemyProbabilities = new List<EnemyProbability>();
     private List<EnemyFactory> _enemyFactories = new List<EnemyFactory>();
@@ -47,12 +47,6 @@ public class EnemySpawner : MonoBehaviour
                 _enemyFactories.Add(item.factory);
     }
 
-    //private void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.Tab))
-    //        SpawnRandomEnemy();
-    //}
-
     IEnumerator RegularSpawn()
     {
         while (true)
@@ -61,5 +55,9 @@ public class EnemySpawner : MonoBehaviour
 
             SpawnRandomEnemy();
         }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, spawnRange);
     }
 }

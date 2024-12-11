@@ -3,12 +3,16 @@ using UnityEngine;
 
 public class RangeEnemy : AbstractEnemy
 {
+
     [Range(0.1f, 100f)] public float DetectionRange = 20f;
     [Range(1, 10)] public int Damage = 4;
     [Range(1, 10)] public int FireRate = 10;
+    [SerializeField] private Transform turretTop;
     [SerializeField] private Transform firePoint;
     [SerializeField] private ParticleSystem shotEffect;
-    [SerializeField] private GameObject enemy;
+
+    [Header("Debug")]
+    [SerializeField] private bool showGizmo = false;
 
     TracerSystem tracerSystem;
 
@@ -26,6 +30,8 @@ public class RangeEnemy : AbstractEnemy
             main.duration = 1 / FireRate;
         }
 
+        animator = turretTop.GetComponent<Animator>();
+
         tracerSystem = GetComponent<TracerSystem>();
 
         _idleState = new Idle(this);
@@ -39,14 +45,20 @@ public class RangeEnemy : AbstractEnemy
     {
         if (dead) return;
 
-        if (Vector3.Distance(transform.position, player.position) > DetectionRange)
+        if (Vector3.Distance(turretTop.position, player.position) > DetectionRange)
             stateMachine?.SetState(_idleState);
-        else if (Vector3.Angle(transform.forward, player.position - transform.position) > 0.5f)
+        else if (Vector3.Angle(turretTop.forward, player.position - turretTop.position) > 0.5f)
             stateMachine?.SetState(_rotateState);
         else
             stateMachine?.SetState(_attackState);
 
         stateMachine?.Update();
+    }
+
+    public override void rotateTo(Vector3 point)
+    {
+        Vector3 dir = point - turretTop.position;
+        turretTop.rotation = Quaternion.RotateTowards(turretTop.rotation, Quaternion.LookRotation(dir), rotationSpeed / updatePerSecond);
     }
 
     public override void attack(bool state)
@@ -90,13 +102,10 @@ public class RangeEnemy : AbstractEnemy
         yield return new WaitForSeconds(1 / FireRate);
     }
 
-    private void OnDestroy()
-    {
-        Destroy(enemy);
-    }
-
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(transform.position, DetectionRange);
+        if (!showGizmo) return;
+
+        Gizmos.DrawWireSphere(turretTop.position, DetectionRange);
     }
 }

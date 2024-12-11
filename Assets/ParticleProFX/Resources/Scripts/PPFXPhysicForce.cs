@@ -21,26 +21,26 @@ public class PPFXPhysicForce : MonoBehaviour {
 	
 	void Start () 
 	{
-		colliders = Physics.OverlapSphere(this.transform.position, radius);
+		//colliders = Physics.OverlapSphere(this.transform.position, radius);
 		
-		StartCoroutine(Explode());
+		//StartCoroutine(Explode());
 	}
 	
-	IEnumerator Explode()
-	{
-		yield return new WaitForSeconds(delay);
+	//IEnumerator Explode()
+	//{
+	//	yield return new WaitForSeconds(delay);
 		
-		for(int i = 0; i < colliders.Length; i ++)
-		{
-			var _rb = colliders[i].GetComponent<Rigidbody>();
+	//	for(int i = 0; i < colliders.Length; i ++)
+	//	{
+	//		var _rb = colliders[i].GetComponent<Rigidbody>();
 			
-			if(_rb != null)
-			{
-				colliders[i].GetComponent<Rigidbody>().AddExplosionForce(force, transform.position, radius, new Vector3(Random.Range(-3, 3),Random.Range(-3, 3),Random.Range(-3, 3)),ForceMode.Impulse);
-			}
-		}
+	//		if(_rb != null)
+	//		{
+	//			colliders[i].GetComponent<Rigidbody>().AddExplosionForce(force, transform.position, radius, new Vector3(Random.Range(-3, 3),Random.Range(-3, 3),Random.Range(-3, 3)),ForceMode.Impulse);
+	//		}
+	//	}
 		
-		yield return null;
-	}
+	//	yield return null;
+	//}
 
 }

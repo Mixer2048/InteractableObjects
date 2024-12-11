@@ -14,7 +14,7 @@ public abstract class AbstractEnemy : MonoBehaviour, IEnemy
     public float rotationSpeed = 120;
 
     NavMeshAgent agent;
-    Animator animator;
+    protected Animator animator;
     protected StateMachine stateMachine;
 
     protected bool stunned = false;

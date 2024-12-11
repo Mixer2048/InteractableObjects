@@ -29,6 +29,7 @@ public class MeleeEnemy : AbstractEnemy
         if (stunned) stateMachine?.SetState(_stunnedState);
         else
         {
+            Debug.Log(Vector3.Angle(transform.forward, player.position - transform.position));
             if (Vector3.Angle(transform.forward, player.position - transform.position) > 10f)
                 stateMachine?.SetState(_rotateState);
             else if (Vector3.Distance(transform.position, player.position) > AttackRange)
