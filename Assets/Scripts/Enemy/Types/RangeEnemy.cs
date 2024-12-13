@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class RangeEnemy : AbstractEnemy
 {
+    [SerializeField] GameObject rocket;
 
     [Range(0.1f, 100f)] public float DetectionRange = 20f;
     [Range(1, 10)] public int Damage = 4;
@@ -19,6 +20,10 @@ public class RangeEnemy : AbstractEnemy
     Idle _idleState;
     RotateTo _rotateState;
     Attack _attackState;
+    RocketLaunch _rocketLaunch;
+
+    [SerializeField, Range(0, 20)] private int rocketInterval = 3;
+    private int attackCount;
 
     private new void Start()
     {
@@ -37,6 +42,7 @@ public class RangeEnemy : AbstractEnemy
         _idleState = new Idle(this);
         _rotateState = new RotateTo(this);
         _attackState = new Attack(this);
+        _rocketLaunch = new RocketLaunch(this);
 
         stateMachine.StartState(_idleState);
     }
@@ -49,6 +55,8 @@ public class RangeEnemy : AbstractEnemy
             stateMachine?.SetState(_idleState);
         else if (Vector3.Angle(turretTop.forward, player.position - turretTop.position) > 0.5f)
             stateMachine?.SetState(_rotateState);
+        else if (attackCount == 3)
+            stateMachine?.SetState(_rocketLaunch);
         else
             stateMachine?.SetState(_attackState);
 
@@ -97,8 +105,17 @@ public class RangeEnemy : AbstractEnemy
         }
     }
 
+    public void RocketLaunch()
+    {
+        Instantiate(rocket, firePoint.position, Quaternion.LookRotation(firePoint.up));
+
+        attackCount = 0;
+    }
+
     private IEnumerator CoolDown()
     {
+        attackCount++;
+
         yield return new WaitForSeconds(1 / FireRate);
     }
 

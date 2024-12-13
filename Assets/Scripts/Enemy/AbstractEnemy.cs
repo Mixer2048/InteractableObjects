@@ -102,4 +102,9 @@ public abstract class AbstractEnemy : MonoBehaviour, IEnemy
 
         Destroy(gameObject);
     }
+
+    public virtual void RocketLaunch(bool state)
+    {
+
+    }
 }

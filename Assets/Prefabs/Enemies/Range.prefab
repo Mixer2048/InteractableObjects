@@ -52,12 +52,15 @@ MonoBehaviour:
   enemyHP: {fileID: 2840648652223045943}
   updatePerSecond: 10
   rotationSpeed: 120
+  rocket: {fileID: 100002, guid: 17b2b6b0357d7264fad48e7c77828051, type: 3}
   DetectionRange: 13
   Damage: 2
   FireRate: 10
   turretTop: {fileID: 6852577288905294738}
   firePoint: {fileID: 5152222693471315411}
   shotEffect: {fileID: 7337457419372099946}
+  showGizmo: 0
+  rocketInterval: 3
 --- !u!114 &7201750787341036917
 MonoBehaviour:
   m_ObjectHideFlags: 0
