@@ -95,7 +95,7 @@ MonoBehaviour:
   enemyHP: {fileID: 4131676142370302721}
   updatePerSecond: 10
   rotationSpeed: 120
-  AttackRange: 3.5
+  AttackRange: 3
   Damage: 4
 --- !u!114 &4131676142370302721
 MonoBehaviour:
