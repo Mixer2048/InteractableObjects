@@ -50,8 +50,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHP: {fileID: 2840648652223045943}
-  updatePerSecond: 10
+  updatePerSecond: 60
   rotationSpeed: 120
+  shieldTime: 2
+  shield: {fileID: 4793687448221685069, guid: 27ce3a374ff9780458985f48c88173d6, type: 3}
   rocket: {fileID: 2550378271099890271, guid: eb6438e247521c64cbb3257e4d02b6ad, type: 3}
   DetectionRange: 13
   Damage: 2
@@ -60,7 +62,7 @@ MonoBehaviour:
   firePoint: {fileID: 5152222693471315411}
   shotEffect: {fileID: 7337457419372099946}
   showGizmo: 0
-  rocketInterval: 40
+  rocketInterval: 20
 --- !u!114 &7201750787341036917
 MonoBehaviour:
   m_ObjectHideFlags: 0

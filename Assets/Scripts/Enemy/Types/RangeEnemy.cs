@@ -21,6 +21,7 @@ public class RangeEnemy : AbstractEnemy
     RotateTo _rotateState;
     Attack _attackState;
     RocketLaunch _rocketLaunch;
+    Invincible _invincible;
 
     [SerializeField, Range(0, 100)] private int rocketInterval = 40;
     private int attackCount;
@@ -43,6 +44,7 @@ public class RangeEnemy : AbstractEnemy
         _rotateState = new RotateTo(this);
         _attackState = new Attack(this);
         _rocketLaunch = new RocketLaunch(this);
+        _invincible = new Invincible(this, shieldTime);
 
         stateMachine.StartState(_idleState);
     }
@@ -51,14 +53,19 @@ public class RangeEnemy : AbstractEnemy
     {
         if (dead) return;
 
-        if (Vector3.Distance(turretTop.position, player.position) > DetectionRange)
-            stateMachine?.SetState(_idleState);
-        else if (Vector3.Angle(turretTop.forward, player.position - turretTop.position) > 0.5f)
-            stateMachine?.SetState(_rotateState);
-        else if (attackCount == rocketInterval)
-            stateMachine?.SetState(_rocketLaunch);
+        if (!isInvincible)
+        {
+            if (Vector3.Distance(turretTop.position, player.position) > DetectionRange)
+                stateMachine?.SetState(_idleState);
+            else if (Vector3.Angle(turretTop.forward, player.position - turretTop.position) > 0.5f)
+                stateMachine?.SetState(_rotateState);
+            else if (attackCount == rocketInterval)
+                stateMachine?.SetState(_rocketLaunch);
+            else
+                stateMachine?.SetState(_attackState);
+        }
         else
-            stateMachine?.SetState(_attackState);
+            stateMachine?.SetState(_invincible);
 
         stateMachine?.Update();
     }
@@ -92,6 +99,8 @@ public class RangeEnemy : AbstractEnemy
 
         Ray ray = new Ray(firePoint.position, firePoint.forward);
         hits = Physics.RaycastAll(ray, 100f, player.gameObject.layer);
+        Debug.Log(player.gameObject.layer);
+        Debug.Log(hits.Length);
 
         System.Array.Sort(hits, (x, y) => x.distance.CompareTo(y.distance));
 
@@ -112,14 +121,10 @@ public class RangeEnemy : AbstractEnemy
         Instantiate(rocket, firePoint.position, Quaternion.LookRotation(firePoint.forward));
 
         attackCount = 0;
-
-        stateMachine?.SetState(_idleState);
     }
 
     private IEnumerator CoolDown()
     {
-        
-
         yield return new WaitForSeconds(1 / FireRate);
     }
 
