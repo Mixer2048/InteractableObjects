@@ -22,7 +22,7 @@ public class RangeEnemy : AbstractEnemy
     Attack _attackState;
     RocketLaunch _rocketLaunch;
 
-    [SerializeField, Range(0, 20)] private int rocketInterval = 3;
+    [SerializeField, Range(0, 100)] private int rocketInterval = 40;
     private int attackCount;
 
     private new void Start()
@@ -55,7 +55,7 @@ public class RangeEnemy : AbstractEnemy
             stateMachine?.SetState(_idleState);
         else if (Vector3.Angle(turretTop.forward, player.position - turretTop.position) > 0.5f)
             stateMachine?.SetState(_rotateState);
-        else if (attackCount == 3)
+        else if (attackCount == rocketInterval)
             stateMachine?.SetState(_rocketLaunch);
         else
             stateMachine?.SetState(_attackState);
@@ -77,6 +77,8 @@ public class RangeEnemy : AbstractEnemy
 
         Shot();
         StartCoroutine(CoolDown());
+
+        attackCount++;
     }
 
     public override void stop(bool state)
@@ -105,16 +107,18 @@ public class RangeEnemy : AbstractEnemy
         }
     }
 
-    public void RocketLaunch()
+    public override void RocketLaunch(bool state)
     {
-        Instantiate(rocket, firePoint.position, Quaternion.LookRotation(firePoint.up));
+        Instantiate(rocket, firePoint.position, Quaternion.LookRotation(firePoint.forward));
 
         attackCount = 0;
+
+        stateMachine?.SetState(_idleState);
     }
 
     private IEnumerator CoolDown()
     {
-        attackCount++;
+        
 
         yield return new WaitForSeconds(1 / FireRate);
     }

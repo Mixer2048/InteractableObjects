@@ -9692,6 +9692,6 @@ MonoBehaviour:
   damage: 25
   radius: 5
   explosionEffect: {fileID: 100002, guid: b9d295024c7c2a744965c16adcc7c4a2, type: 3}
-  enemy:
+  target:
     serializedVersion: 2
     m_Bits: 64

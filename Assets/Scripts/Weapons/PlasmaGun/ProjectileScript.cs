@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class ProjectileScript : MonoBehaviour
 {
     [SerializeField, Range(1f, 20f)] public float lifeTime = 2f;
@@ -9,8 +10,7 @@ public class ProjectileScript : MonoBehaviour
     [SerializeField, Range(0f, 50f)] public float radius = 5f;
 
     [SerializeField] GameObject explosionEffect;
-    [SerializeField] LayerMask enemy;
-    [SerializeField] LayerMask player;
+    [SerializeField] LayerMask target;
 
     Rigidbody body;
 
@@ -18,7 +18,7 @@ public class ProjectileScript : MonoBehaviour
     {
         body = GetComponent<Rigidbody>();
 
-        //transform.rotation *= Quaternion.Euler(-90, 0, 0);
+        transform.rotation *= Quaternion.Euler(-90, 0, 0);
 
         StartCoroutine(LifeTime());
     }
@@ -30,22 +30,23 @@ public class ProjectileScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == player) return;
+        Collider[] targets = Physics.OverlapSphere(transform.position, radius, target);
 
-        GameObject exp = Instantiate(explosionEffect, transform.position, Quaternion.identity);
-        Destroy(exp, 2f);
-
-        Collider[] enemies = Physics.OverlapSphere(transform.position, radius, enemy);
-
-        foreach (Collider enemy in enemies)
+        if (targets.Length > 0)
         {
-            Health enemyHP = enemy.transform.GetComponent<Health>();
+            GameObject exp = Instantiate(explosionEffect, transform.position, Quaternion.identity);
+            Destroy(exp, 2f);
 
-            if (enemyHP != null)
-                enemyHP.hpDecrease(damage);
+            foreach (Collider target in targets)
+            {
+                Health targetHP = target.transform.GetComponent<Health>();
+
+                if (targetHP != null)
+                    targetHP.hpDecrease(damage);
+            }
+
+            Destroy(gameObject);
         }
-        
-        Destroy(gameObject);
     }
 
     private IEnumerator LifeTime()

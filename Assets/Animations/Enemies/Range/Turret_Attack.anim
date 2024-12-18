@@ -48,7 +48,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Turret_basic_lvl1/TBasic_lvl1_bot/TBasic_lvl1_top
+    path: 
   m_ScaleCurves: []
   m_FloatCurves: []
   m_PPtrCurves: []
@@ -60,7 +60,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 163228429
+      path: 0
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -116,7 +116,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Turret_basic_lvl1/TBasic_lvl1_bot/TBasic_lvl1_top
+    path: 
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -146,7 +146,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Turret_basic_lvl1/TBasic_lvl1_bot/TBasic_lvl1_top
+    path: 
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -185,11 +185,11 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Turret_basic_lvl1/TBasic_lvl1_bot/TBasic_lvl1_top
+    path: 
     classID: 4
     script: {fileID: 0}
     flags: 0
   m_EulerEditorCurves: []
-  m_HasGenericRootTransform: 0
+  m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events: []
